@@ -343,6 +343,7 @@ namespace EliezerDodgeGame
             player.PlayerH = val * 20 + 80;
             player.PlayerW = val * 16 + 67;
 
+            //Making sure the player doesnt pass the borders (while on the borders themselves) while being resized
             if (player.PlayerY + player.PlayerH >= 1010)
                 Canvas.SetTop(player.Player_img, player.PlayerY - 20);
             if (player.PlayerX + player.PlayerW >= 1920)
