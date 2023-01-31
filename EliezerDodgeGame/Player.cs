@@ -77,13 +77,13 @@ namespace EliezerDodgeGame
         }
         public void PlayerMovementDirection()
         {
-            if (up == true && playeryAxis > 1)
+            if (up == true && playeryAxis > 6)
                 Canvas.SetTop(player_img, playeryAxis - playerspeed);
-            if (down == true && playeryAxis < 885)
+            if (down == true && playeryAxis + playerHeight < 1010)
                 Canvas.SetTop(player_img, playeryAxis + playerspeed);
             if (left == true && playerxAxis > -4)
                 Canvas.SetLeft(player_img, playerxAxis - playerspeed);
-            if (right == true && playerxAxis < 1865)
+            if (right == true && playerxAxis + playerWidth < 1920)
                 Canvas.SetLeft(player_img, playerxAxis + playerspeed);
 
             playerxAxis = Canvas.GetLeft(player_img);
