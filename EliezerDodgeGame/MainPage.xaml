@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="EliezerDodgeGame.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EliezerDodgeGame"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Canvas x:Name="myCanvas" Background="Blue" Height="1050" Width="1920" Margin="0,30,0,0">
+        <Border BorderThickness="2" BorderBrush="Black" Height="1050" Width="1920" />
+
+        <Grid x:Name="myGrid" Canvas.Top="-30" Width="1920" Background="Blue">
+            <StackPanel Orientation="Horizontal">
+                <AppBarButton x:Name="PlayButton" Background="BlueViolet" Height="30" Width="50"  Content="Start" Click="start_game"/>
+                <AppBarSeparator x:Name="PlayButtonSeperator" Height="20" Width="20"/>
+                <AppBarButton x:Name="NewButton" Background="BlueViolet" Height="30" Width="70" Content="New Game" Click="NewGame_Click" Visibility="Collapsed"/>
+                <AppBarSeparator x:Name="NewButtonSeperator" Height="20" Width="20" Visibility="Collapsed"/>
+                <AppBarToggleButton x:Name="PauseButton" Background="BlueViolet" Height="30" Width="50" Content="Pause" Checked="checked_pause" Unchecked="unchecked_paused" IsEnabled="False"/>
+                <AppBarSeparator Height="20" Width="20"/>
+                <AppBarButton x:Name="Save" Background="BlueViolet" Height="30" Width="50" Content="Save" Click="Save_Click" IsEnabled="False"/>
+                <AppBarSeparator Height="20" Width="20"/>
+                <AppBarButton x:Name="Load" Background="BlueViolet" Height="30" Width="50" Content="Load" Click="Load_Click"/>
+                <AppBarSeparator Height="20" Width="20"/>
+                <AppBarButton x:Name="Reset" Background="BlueViolet" Height="30" Width="55" Content="Reset" Click="Reset_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="30" Width="1250" Background="BlueViolet">
+                <Border Width="60" />
+                <TextBlock Text="Player" TextAlignment="Center" VerticalAlignment="Center"/>
+                <AppBarSeparator />
+                <TextBlock Text="Size:" TextAlignment="Center" VerticalAlignment="Center"/>
+                <AppBarSeparator />
+                <Slider x:Name="PlayerSizeSlider" Width="100" Maximum="5" ValueChanged="Player_Size"/>
+                <AppBarSeparator />
+                <TextBlock Text="Speed:" TextAlignment="Center" VerticalAlignment="Center"/>
+                <AppBarSeparator />
+                <Slider x:Name="PlayerSpeedSlider" Width="100" Value="5" Maximum="15" ValueChanged="Player_Speed"/>
+                <AppBarSeparator />
+                <TextBlock x:Name="Title" Text="Eliezer's Dodge Game" FontSize="20" TextAlignment="Center"/>
+                <AppBarSeparator />
+                <TextBlock Text="Enemy" TextAlignment="Center" VerticalAlignment="Center"/>
+                <AppBarSeparator />
+                <TextBlock Text="Size" TextAlignment="Center" VerticalAlignment="Center"/>
+                <AppBarSeparator />
+                <Slider x:Name="EnemySizeSlider" Width="100" Maximum="5" ValueChanged="Enemy_Size" IsEnabled="False"/>
+                <AppBarSeparator />
+                <TextBlock Text="Speed:" TextAlignment="Center" VerticalAlignment="Center"/>
+                <AppBarSeparator />
+                <Slider x:Name="EnemySpeedSlider" Width="100" Value="1" Maximum="10" ValueChanged="Enemy_Speed" IsEnabled="False"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right">
+                <AppBarButton x:Name="ExitButton" Background="BlueViolet" Height="30" Width="50" Content="Exit" Click="exit_click" />
+            </StackPanel>
+        </Grid>
+    </Canvas>
+
+</Page>
