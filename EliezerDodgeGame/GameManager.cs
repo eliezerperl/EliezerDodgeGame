@@ -24,7 +24,6 @@ namespace EliezerDodgeGame
                     if (Collision(enemyArr[i].Enemy_Img, enemyArr[j].Enemy_Img, 0))
                     {
                         canvas.Children.Remove(enemyArr[i].Enemy_Img);
-
                     }
                 }
             }
