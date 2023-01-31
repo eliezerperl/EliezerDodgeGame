@@ -91,6 +91,8 @@ namespace EliezerDodgeGame
                 timer.Tick += BoardTimer_Tick;
             }
             timer.Start();
+            if ((bool)PauseButton.IsChecked)
+                PauseButton.IsChecked = false;
             EnableButtons();
             board.LoadGame();
             board.SetSpeedSliderValues(EnemySpeedSlider, PlayerSpeedSlider, EnemySizeSlider, PlayerSizeSlider);

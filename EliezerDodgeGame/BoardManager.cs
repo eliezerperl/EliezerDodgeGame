@@ -282,6 +282,7 @@ namespace EliezerDodgeGame
                 }
                 timer.Start();
 
+
                 // Extracting players width, height and speed and setting them
                 if (File.Exists("playerwhspeed.txt"))
                 {
